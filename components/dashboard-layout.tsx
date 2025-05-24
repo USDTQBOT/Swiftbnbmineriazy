@@ -36,7 +36,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
       >
         <div className="p-4 border-b border-gray-800 flex justify-between items-center">
           <Link href="/dashboard" className="text-xl font-bold text-[#40e0d0]">
-            BitVictz
+            7gRapidz
           </Link>
           <button className="lg:hidden" onClick={toggleSidebar}>
             <X className="h-6 w-6" />
