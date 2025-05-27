@@ -23,3 +23,24 @@ export default function Home() {
     </main>
   )
 }
+import ClientComponent from './ClientComponent'
+ 
+export default async function Page() {
+  const performUpdate = async () => {
+    'use server'
+    // Perform some server-side update
+    await db.update(...)
+  }
+ 
+  return <CacheComponent performUpdate={performUpdate} />
+}
+ 
+async function CachedComponent({
+  performUpdate,
+}: {
+  performUpdate: () => Promise<void>
+}) {
+  'use cache'
+  // Do not call performUpdate here
+  return <ClientComponent action={performUpdate} />
+}
