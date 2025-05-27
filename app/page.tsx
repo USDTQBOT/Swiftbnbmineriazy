@@ -1,3 +1,22 @@
+export default async function Page() {
+  const uncachedData = await getData()
+  return (
+    <CacheComponent>
+      <DynamicComponent data={uncachedData} />
+    </CacheComponent>
+  )
+}
+ 
+async function CacheComponent({ children }: { children: ReactNode }) {
+  'use cache'
+  const cachedData = await fetch('/api/cached-data')
+  return (
+    <div>
+      <PrerenderedComponent data={cachedData} />
+      {children}
+    </div>
+  )
+}
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import LoginForm from "@/components/login-form"
@@ -22,25 +41,4 @@ export default function Home() {
       <CookieConsent />
     </main>
   )
-}
-import ClientComponent from './ClientComponent'
- 
-export default async function Page() {
-  const performUpdate = async () => {
-    'use server'
-    // Perform some server-side update
-    await db.update(...)
-  }
- 
-  return <CacheComponent performUpdate={performUpdate} />
-}
- 
-async function CachedComponent({
-  performUpdate,
-}: {
-  performUpdate: () => Promise<void>
-}) {
-  'use cache'
-  // Do not call performUpdate here
-  return <ClientComponent action={performUpdate} />
 }
