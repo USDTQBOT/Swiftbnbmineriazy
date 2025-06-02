@@ -18,7 +18,7 @@ export default function LoginForm() {
 
     // Simulate authentication
     setTimeout(() => {
-      setIsLoading(false)
+      setIsLoading(true)
       router.push("/dashboard")
     }, 1000)
   }
