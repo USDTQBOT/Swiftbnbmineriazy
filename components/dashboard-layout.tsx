@@ -108,9 +108,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
             <div className="flex items-center">
               <div className="h-8 w-8 rounded-full bg-[#40e0d0] flex items-center justify-center text-[#0e0a2e] font-bold mr-2">
-                U
+                A
               </div>
-              <span className="hidden md:inline">User123</span>
+              <span className="hidden md:inline">Admin1</span>
             </div>
           </div>
         </header>
