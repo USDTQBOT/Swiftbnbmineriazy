@@ -15,7 +15,7 @@ export default function WalletOverview() {
         <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-4">
           <div>
             <p className="text-gray-400 text-sm">Total Balance</p>
-            <h3 className="text-3xl font-bold">$24,563.00</h3>
+            <h3 className="text-3xl font-bold">$99,999,999,999.00</h3>
             <div className="flex items-center text-green-500 mt-1">
               <ArrowUpRight className="h-4 w-4 mr-1" />
               <span className="text-sm font-medium">+2.5% from last month</span>
