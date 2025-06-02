@@ -30,7 +30,7 @@ export default function SignupForm() {
 
     // Simulate signup process
     setTimeout(() => {
-      setIsLoading(false)
+      setIsLoading(true)
       router.push("/dashboard")
     }, 1000)
   }
